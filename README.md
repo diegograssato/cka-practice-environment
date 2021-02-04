@@ -16,7 +16,7 @@ thx the orginal repo [arush-sal/cka-practice-environment](https://github.com/aru
 export PUBLIC_IP=47.52.219.131
 export PRIVATE_IP=172.31.63.194
 
-# install docker-compose 
+# install docker-compose
 wget https://docs.rancher.cn/download/compose/v1.24.1-docker-compose-Linux-x86_64
 mv v1.24.1-docker-compose-Linux-x86_64 docker-compose
 chmod +x docker-compose
@@ -128,7 +128,7 @@ networks:
 volumes:
   ssh_key: {}
 ```
- 
+
 To start the lab environment you can do either of the following two:
 
 #### To use the prebuilt images
@@ -138,7 +138,14 @@ docker-compose up -d
 ```
 and point your browser to `http://47.52.219.131`
 
-#### To build the images yourself locally 
+#### To use the prebuilt images with kind
+run
+```
+docker-compose  -f docker-compose-kind.yaml up -d
+```
+and point your browser to `http://172.26.0.1`
+
+#### To build the images yourself locally
 run
 ```
 docker-compose -f docker-compose-builder.yaml up -d
